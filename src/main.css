@@ -1,4 +1,8 @@
 body {
   background-color: black;
   color: white;
+  overflow-y: hidden;
+}
+body img {
+  width: 100%;
 }/*# sourceMappingURL=main.css.map */
