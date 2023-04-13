@@ -1,27 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+	<h1>STAR WARS PLANETS</h1>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+	import { defineComponent } from 'vue';
 
-export default defineComponent({
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-});
+	export default defineComponent({
+		name: 'App',
+		components: {}
+	});
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+	// just basic setup for our app
+
+	body {
+		$bg-color: #0d151f;
+		$txt-color: #fff;
+		$font-family: sans-serif;
+
+		color: $txt-color;
+		background: $bg-color;
+		font-family: $font-family;
+		text-align: center;
+	}
 </style>
