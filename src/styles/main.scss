@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import './variables';
+
+body {
+	background: url('../assets/main-background.webp');
+	background-size: cover;
+	overflow-y: scroll;
+
+	font-family: $font-family;
+
+	.header-main-txt {
+		color: transparent;
+		-webkit-text-stroke: 1px $secondary-color;
+		font-size: 5rem;
+		font-weight: 700;
+		span {
+			color: $secondary-color;
+			-webkit-text-stroke: none;
+		}
+	}
+
+	.input-group
+		> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
+			.valid-feedback
+		):not(.invalid-tooltip):not(.invalid-feedback) {
+		border: none !important;
+		outline: none !important;
+		box-shadow: none !important;
+	}
+	.card {
+		background-color: $dark-color;
+		color: $main-color;
+		min-height: 13rem !important;
+
+		h3 {
+			color: $secondary-color;
+		}
+	}
+}

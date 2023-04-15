@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap");
+body {
+  background: url("../assets/main-background.webp");
+  background-size: cover;
+  overflow-y: scroll;
+  font-family: "Barlow Condensed", sans-serif;
+}
+body .header-main-txt {
+  color: transparent;
+  -webkit-text-stroke: 1px #ffe81f;
+  font-size: 5rem;
+  font-weight: 700;
+}
+body .header-main-txt span {
+  color: #ffe81f;
+  -webkit-text-stroke: none;
+}
+body .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+body .card {
+  background-color: #1d1e1f;
+  color: #fff;
+  min-height: 13rem !important;
+}
+body .card h3 {
+  color: #ffe81f;
+}/*# sourceMappingURL=main.css.map */
