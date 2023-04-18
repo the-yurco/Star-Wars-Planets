@@ -54,8 +54,14 @@
 						v-for="planet in planets"
 						:key="planet.name"
 						:planet="planet"
+						@card-clicked="handleCardClicked"
 					/>
 				</div>
+				<PlanetModalComponent
+					v-if="selectedPlanet"
+					:planet="selectedPlanet"
+					@close="handleCloseDetails"
+				/>
 			</div>
 		</div>
 	</div>
@@ -65,13 +71,15 @@
 	// IMPORTS
 	import { defineComponent, ref } from 'vue';
 	import PlanetCardComponent from './components/PlanetCardComponent.vue';
+	import PlanetModalComponent from './components/PlanetModalComponent.vue';
 	import { fetchPlanets, PlanetInfo } from './api_data';
 
 	export default defineComponent({
 		name: 'App',
 
 		components: {
-			PlanetCardComponent
+			PlanetCardComponent,
+			PlanetModalComponent
 		},
 
 		// A SETUP function that defines the reactive data and functions that are used in the component
@@ -79,6 +87,8 @@
 			const searchTerm = ref(''); // property that sores the user's search term
 			const planets = ref<PlanetInfo[]>([]); // property that sores the list of planets fetched from API
 			const isLoading = ref(false); // property that stores if the app is currently fetching data from API
+
+			const selectedPlanet = ref<PlanetInfo | null>(null);
 
 			// An zsync function that is called when user types in the search input
 			// it fetches the list of planets that match the seaerxh term and updates the planets property
@@ -88,11 +98,24 @@
 				isLoading.value = false;
 			};
 
+			// this func. is called when the user closes the modal card
+			const handleCloseDetails = () => {
+				selectedPlanet.value = null;
+			};
+
+			// this func. is called when the user clicks on a planet card
+			const handleCardClicked = (planet: PlanetInfo) => {
+				selectedPlanet.value = planet;
+			};
+
 			return {
 				searchTerm,
 				planets,
 				isLoading,
-				handleSearchInput
+				selectedPlanet,
+				handleSearchInput,
+				handleCloseDetails,
+				handleCardClicked
 			};
 		}
 	});
