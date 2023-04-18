@@ -1,6 +1,6 @@
 <template>
 	<div class="col-md-3 col-sm-6 mb-4">
-		<div class="card p-3 rounded">
+		<div class="card p-3 rounded" @click="handleClick">
 			<!--  <h2> and a <p> element to display the name and population of the planet  -->
 			<h3>{{ planet.name }}</h3>
 			<p>
@@ -28,6 +28,17 @@
 				type: Object as PropType<PlanetInfo>,
 				required: true
 			}
+		},
+
+		setup(props, { emit }) {
+			const handleClick = () => {
+				// when this func. is called it will trigger the card-clicked event and EMIT it to the parent component along eith the value of "planet" property from "props" objct
+				emit('card-clicked', props.planet);
+			};
+
+			return {
+				handleClick
+			};
 		}
 	});
 </script>
