@@ -4,19 +4,42 @@
 			<div
 				class="header-card d-flex justify-content-between align-items-center"
 			>
-				<h2 class="mt-2">
+				<h2 class="mb-4">
 					{{ planet.name }}
 				</h2>
-				<div class="close btn rounded-1" @click="handleClose">&times;</div>
 			</div>
-			<p>"rotation_period": {{ planet.rotation_period }}</p>
+			<!-- <p>"rotation_period": {{ planet.rotation_period }}</p>
 			<p>"orbital_period": {{ planet.orbital_period }}</p>
-			<p>"diameter": {{ planet.diameter }}</p>
-			<p>"climate": {{ planet.climate }}</p>
-			<p>"gravity": {{ planet.gravity }}</p>
-			<p>"terrain": {{ planet.terrain }}</p>
-			<p>"surface_water": {{ planet.terrain }}</p>
-			<p>"population": {{ planet.population }}</p>
+			<p>"diameter": {{ planet.diameter }}</p> -->
+			<div>
+				<div class="row">
+					<p class="col">
+						Climate: <span>{{ planet.climate }}</span>
+					</p>
+					<p class="col">
+						Population: <span>{{ planet.population }}</span>
+					</p>
+				</div>
+				<div class="row">
+					<p class="col">
+						Gravity: <span>{{ planet.gravity }}</span>
+					</p>
+					<p class="col">
+						Surface water:
+						<span>
+							{{ planet.surface_water }}
+						</span>
+					</p>
+				</div>
+				<div class="row">
+					<p class="col">
+						Terrain: <span>{{ planet.terrain }}</span>
+					</p>
+				</div>
+				<div class="row">
+					<p class="close btn rounded-1 mt-5" @click="handleClose">Close</p>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
