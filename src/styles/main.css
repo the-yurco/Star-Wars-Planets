@@ -75,19 +75,25 @@ body .modal-content {
   margin: 15% auto;
   color: white;
   width: 80%;
-  max-width: 800px;
+  max-width: 45%;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 7px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -10px, rgba(0, 0, 0, 0.322) 0px -7px 0px inset;
+}
+body .modal-content span {
+  color: #a1cad7;
+  border: 1px solid #1d1e1f;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
 }
 body .close {
   color: #a1cad7;
-  display: flex;
-  justify-content: end;
-  font-size: 28px;
-  font-weight: bold;
+  border: 1px solid #a1cad7;
+  width: 20%;
 }
 body .close:hover,
 body .close:focus {
-  color: black;
+  color: #a1cad7;
+  background-color: #1d1e1f;
+  border: 1px solid #1d1e1f;
   text-decoration: none;
   cursor: pointer;
 }/*# sourceMappingURL=main.css.map */
