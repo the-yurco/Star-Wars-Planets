@@ -1,35 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap");
+@keyframes modal-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
 * {
   transition: all 0.3s;
 }
 
 body {
   background: url("../assets/main-background.webp");
-  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   overflow-y: scroll;
   font-family: "Orbitron", sans-serif;
 }
 body .header-main-txt {
-  color: transparent;
+  color: #a1cad7;
   -webkit-text-stroke: 1px #5e8796;
   font-size: 5rem;
   font-weight: 900;
-  color: #a1cad7;
   text-shadow: 0px 0px 0 #99c1cf, 1px 1px 0 #91b9c7, 2px 2px 0 #88b1bf, 3px 3px 0 #80a9b7, 4px 4px 0 #779fae, 5px 5px 0 #6f97a6, 6px 6px 0 #668f9e, 7px 7px 0 #5e8796, 8px 8px 0 #567e8e, 9px 9px 0 #4d7686, 10px 10px 0 #456e7e, 11px 11px 0 #3d6676, 12px 12px 0 #346e6d, 13px 13px 0 #2c5e65, 14px 14px 0 #23565d, 15px 15px 0 #1b4e55, 16px 16px 0 #13464d, 17px 17px 0 #0a3e45, 18px 18px 0 #02363d, 19px 19px 0 #0b2e35, 20px 20px 0 #14262d, 21px 21px 10px rgb(0, 0, 0), 21px 21px 1px rgba(0, 0, 0, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
-body .header-main-txt span {
-  -webkit-text-stroke: none;
-}
 body #basic-addon1 {
+  color: #1d1e1f;
   border: none;
   background-color: #a1cad7;
-  color: #1d1e1f;
   border: 1px solid #5e8796 !important;
 }
 body #basic-addon1 img {
   height: 2rem !important;
-  color: #1d1e1f;
 }
 body .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
   border: none !important;
@@ -69,14 +72,20 @@ body .modal {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
+  overflow-y: hidden;
+  overflow-x: hidden;
+  backdrop-filter: blur(3px);
 }
 body .modal-content {
+  overflow-y: hidden;
+  overflow-x: hidden;
   background-color: #02363d;
   margin: 15% auto;
-  color: white;
+  color: #fff;
   width: 80%;
-  max-width: 45%;
+  max-width: 40%;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 7px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -10px, rgba(0, 0, 0, 0.322) 0px -7px 0px inset;
+  animation: modal-animation 0.2s ease-in 1;
 }
 body .modal-content span {
   color: #a1cad7;
@@ -87,7 +96,6 @@ body .modal-content span {
 body .close {
   color: #a1cad7;
   border: 1px solid #a1cad7;
-  width: 20%;
 }
 body .close:hover,
 body .close:focus {

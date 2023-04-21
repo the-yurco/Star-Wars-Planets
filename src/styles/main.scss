@@ -1,53 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 
-@import './variables';
+@import './abstracts/variables';
+@import './abstracts/mixins';
+@import './abstracts/keyframes';
 
 * {
 	transition: all 0.3s;
 }
 
 body {
-	background: url('../assets/main-background.webp');
-	background-size: cover;
-	// background-position: center;
-	// height: 0;
-	// padding-bottom: 56.25%;
-	background-repeat: no-repeat;
+	@include background-img-config;
 	overflow-y: scroll;
-
 	font-family: $font-family;
 
 	.header-main-txt {
-		color: transparent;
-		-webkit-text-stroke: 1px #5e8796;
+		color: $secondary-color;
+		-webkit-text-stroke: 1px $third-color;
 		font-size: 5rem;
 		font-weight: 900;
-
-		color: #a1cad7;
-		text-shadow: 0px 0px 0 #99c1cf, 1px 1px 0 #91b9c7, 2px 2px 0 #88b1bf,
-			3px 3px 0 #80a9b7, 4px 4px 0 #779fae, 5px 5px 0 #6f97a6, 6px 6px 0 #668f9e,
-			7px 7px 0 #5e8796, 8px 8px 0 #567e8e, 9px 9px 0 #4d7686,
-			10px 10px 0 #456e7e, 11px 11px 0 #3d6676, 12px 12px 0 #346e6d,
-			13px 13px 0 #2c5e65, 14px 14px 0 #23565d, 15px 15px 0 #1b4e55,
-			16px 16px 0 #13464d, 17px 17px 0 #0a3e45, 18px 18px 0 #02363d,
-			19px 19px 0 #0b2e35, 20px 20px 0 #14262d, 21px 21px 10px rgba(0, 0, 0, 1),
-			21px 21px 1px rgba(0, 0, 0, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.2);
-
-		span {
-			// color: $secondary-color;
-			-webkit-text-stroke: none;
-		}
+		@include header-box-shadow;
 	}
 
 	#basic-addon1 {
-		border: none;
-		background-color: #a1cad7;
 		color: $dark-color;
-		border: 1px solid #5e8796 !important;
+		border: none;
+		background-color: $secondary-color;
+		border: 1px solid $third-color !important;
 
 		img {
 			height: 2rem !important;
-			color: $dark-color;
 		}
 	}
 
@@ -55,31 +36,22 @@ body {
 		> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
 			.valid-feedback
 		):not(.invalid-tooltip):not(.invalid-feedback) {
-		border: none !important;
-		outline: none !important;
-		box-shadow: none !important;
+		@include reset-borders;
 		background-color: $dark-color;
-
-		border: 1px solid #111111 !important;
+		border: 1px solid $border-color !important;
 	}
 
 	.card {
 		background-color: $dark-color;
 		color: $main-color;
 		min-height: 13rem !important;
-		border: 1px solid #111111 !important;
+		border: 1px solid $border-color !important;
 
-		box-shadow: rgba(0, 0, 0, 0.4) 0px 7px 4px,
-			rgba(0, 0, 0, 0.3) 0px 7px 13px -10px,
-			rgba(0, 0, 0, 0.322) 0px -5px 0px inset;
+		@include card-box-shadow;
 
 		&:hover {
-			box-shadow: rgba(0, 0, 0, 0.4) 0px 12px 4px,
-				rgba(0, 0, 0, 0.3) 0px 7px 13px -10px,
-				rgba(0, 0, 0, 0.322) 0px -5px 0px inset;
+			@include card-box-shadow-hover;
 		}
-
-		// border: 1px solid black;
 
 		h3 {
 			color: $secondary-color;
@@ -94,7 +66,6 @@ body {
 	.alert {
 		position: absolute;
 		top: 90% !important;
-		// width: 20%;
 	}
 
 	.modal {
@@ -107,17 +78,19 @@ body {
 		height: 100%;
 		overflow: auto;
 		background-color: rgba(0, 0, 0, 0.4);
+		@include overflow-hidden;
+		backdrop-filter: blur(3px);
 	}
 
 	.modal-content {
-		background-color: #02363d;
+		@include overflow-hidden;
+		background-color: $modal-content;
 		margin: 15% auto;
-		color: white;
+		color: $main-color;
 		width: 80%;
-		max-width: 45%;
-		box-shadow: rgba(0, 0, 0, 0.4) 0px 7px 4px,
-			rgba(0, 0, 0, 0.3) 0px 7px 13px -10px,
-			rgba(0, 0, 0, 0.322) 0px -7px 0px inset;
+		max-width: 40%;
+		@include modal-card-box-shadow;
+		animation: modal-animation 0.2s ease-in 1;
 
 		span {
 			color: $secondary-color;
@@ -127,17 +100,9 @@ body {
 		}
 	}
 
-	.header-class {
-	}
-
 	.close {
-		color: #a1cad7;
+		color: $secondary-color;
 		border: 1px solid $secondary-color;
-		// display: flex;
-		width: 20%;
-		// justify-self: end;
-		// font-size: 28px;
-		// font-weight: bold;
 	}
 
 	.close:hover,
