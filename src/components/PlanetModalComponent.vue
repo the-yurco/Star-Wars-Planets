@@ -1,16 +1,13 @@
 <template>
-	<div class="modal">
-		<div class="modal-content p-5">
+	<div class="modal" @click="handleClose">
+		<div class="modal-content p-4">
 			<div
 				class="header-card d-flex justify-content-between align-items-center"
 			>
-				<h2 class="mb-4">
+				<h2 class="mb-5">
 					{{ planet.name }}
 				</h2>
 			</div>
-			<!-- <p>"rotation_period": {{ planet.rotation_period }}</p>
-			<p>"orbital_period": {{ planet.orbital_period }}</p>
-			<p>"diameter": {{ planet.diameter }}</p> -->
 			<div>
 				<div class="row">
 					<p class="col">
@@ -37,7 +34,9 @@
 					</p>
 				</div>
 				<div class="row">
-					<p class="close btn rounded-1 mt-5" @click="handleClose">Close</p>
+					<div class="col-6">
+						<p class="close btn rounded-1 mt-5" @click="handleClose">Close</p>
+					</div>
 				</div>
 			</div>
 		</div>

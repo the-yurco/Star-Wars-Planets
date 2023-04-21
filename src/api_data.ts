@@ -23,7 +23,7 @@ const API_URL = 'https://swapi.py4e.com/api';
 //! FETCH function => fetchPlanets
 // This function is an asynchronous function that takes an optional searchTerm parameter, which is a string
 // The function returns a Promise of an array of objects that match the PlanetInfo interface
-export async function fetchPlanets(searchTerm = ''): Promise<PlanetInfo[]> {
+export async function fetchPlanets(searchTerm: string): Promise<PlanetInfo[]> {
 	//---------------------------------------------------------------------
 
 	// FETCH function for making request to SWAPI api
@@ -35,5 +35,6 @@ export async function fetchPlanets(searchTerm = ''): Promise<PlanetInfo[]> {
 	const data: PlanetResponse = await response.json();
 
 	// DATA RESULTS => returned from the function
+	// return data.results;
 	return data.results;
 }
