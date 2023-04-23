@@ -69,7 +69,7 @@
 
 <script lang="ts">
 	// IMPORTS
-	import { defineComponent, ref } from 'vue';
+	import { defineComponent, onMounted, ref } from 'vue';
 	import PlanetCardComponent from './components/PlanetCardComponent.vue';
 	import PlanetModalComponent from './components/PlanetModalComponent.vue';
 	import { fetchPlanets, PlanetInfo } from './api_data';
@@ -85,10 +85,20 @@
 		// A SETUP function that defines the reactive data and functions that are used in the component
 		setup() {
 			const searchTerm = ref(''); // property that sores the user's search term
-			const planets = ref<PlanetInfo[]>([]); // property that sores the list of planets fetched from API
-			const isLoading = ref(false); // property that stores if the app is currently fetching data from API
+			const planets = ref<PlanetInfo[]>([]); // property that soTres the list of planets fetched from API
+			const isLoading = ref(true); // property that stores if the app is currently fetching data from API
 
-			const selectedPlanet = ref<PlanetInfo | null>(null);
+			const selectedPlanet = ref<PlanetInfo | null>(null); // stores the selected planet for displaying details
+
+			// this func will fetch the whole list of planets that match the searchTerm and it will update planets prop
+			const fetchPlanetsOnLoad = async () => {
+				isLoading.value = true;
+				planets.value = await fetchPlanets('');
+				isLoading.value = false;
+			};
+
+			// call fetchPlanetsOnLoad when the component is mounted:
+			onMounted(fetchPlanetsOnLoad);
 
 			// An zsync function that is called when user types in the search input
 			// it fetches the list of planets that match the seaerxh term and updates the planets property
