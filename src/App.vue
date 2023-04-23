@@ -86,7 +86,7 @@
 		setup() {
 			const searchTerm = ref(''); // property that sores the user's search term
 			const planets = ref<PlanetInfo[]>([]); // property that soTres the list of planets fetched from API
-			const isLoading = ref(true); // property that stores if the app is currently fetching data from API
+			const isLoading = ref(); // property that stores if the app is currently fetching data from API
 
 			const selectedPlanet = ref<PlanetInfo | null>(null); // stores the selected planet for displaying details
 
