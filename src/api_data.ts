@@ -26,9 +26,16 @@ const API_URL = 'https://swapi.py4e.com/api';
 export async function fetchPlanets(searchTerm: string): Promise<PlanetInfo[]> {
 	//---------------------------------------------------------------------
 
-	// FETCH function for making request to SWAPI api
-	// SEARCH-TERM = search variable for our planets
-	const response = await fetch(`${API_URL}/planets/?search=${searchTerm}`);
+	// set the URL to fetch data by based on whether a search term was provided or not
+	const url = searchTerm
+		? `${API_URL}/planets/?search=${searchTerm}`
+		: `${API_URL}/planets/`;
+
+	//// FETCH function for making request to SWAPI api
+	//// SEARCH-TERM = search variable for our planets
+
+	// use fetch function to make a GET request to the specified URL and store our output informations to response var.
+	const response = await fetch(url);
 
 	// The RESPONSE from the API is converted to JSON
 	// DATA => resulting JSON
