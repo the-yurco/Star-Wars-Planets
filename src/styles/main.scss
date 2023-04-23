@@ -16,7 +16,7 @@ body {
 	.header-main-txt {
 		color: $secondary-color;
 		-webkit-text-stroke: 1px $third-color;
-		font-size: clamp(3rem, 4vw, 5rem);
+		font-size: clamp(3rem, 5vw, 6rem);
 		font-weight: 900;
 		@include header-box-shadow;
 	}
