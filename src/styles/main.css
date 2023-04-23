@@ -56,19 +56,16 @@ body .card {
   color: #fff;
   min-height: 13rem !important;
   border: 1px solid #111111 !important;
-  transition: transform 0.2s ease-in-out;
-  animation: card-showing 0.6s ease forwards;
+  transition: all 0.3s;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 7px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -10px, rgba(0, 0, 0, 0.322) 0px -5px 0px inset;
 }
 body .card:hover {
+  transform: translateY(-8px);
+  cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 12px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -10px, rgba(0, 0, 0, 0.322) 0px -5px 0px inset;
 }
 body .card h3 {
   color: #a1cad7;
-}
-body .card:hover {
-  transform: translateY(-5px);
-  cursor: pointer;
 }
 body .alert {
   position: absolute;

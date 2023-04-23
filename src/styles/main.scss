@@ -46,22 +46,17 @@ body {
 		color: $main-color;
 		min-height: 13rem !important;
 		border: 1px solid $border-color !important;
-		transition: transform 0.2s ease-in-out;
-		animation: card-showing 0.6s ease forwards;
-
+		transition: all 0.3s;
 		@include card-box-shadow;
 
 		&:hover {
+			transform: translateY(-8px);
+			cursor: pointer;
 			@include card-box-shadow-hover;
 		}
 
 		h3 {
 			color: $secondary-color;
-		}
-
-		&:hover {
-			transform: translateY(-5px);
-			cursor: pointer;
 		}
 	}
 
