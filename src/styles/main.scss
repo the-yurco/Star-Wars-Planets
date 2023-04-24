@@ -66,6 +66,11 @@ body {
 		// top: 90% !important;
 		font-size: clamp(0.8rem, 1vw, 1rem);
 		animation: shake 0.5s linear;
+		width: fit-content !important ;
+
+		svg {
+			height: 1.5rem;
+		}
 	}
 
 	.modal {
