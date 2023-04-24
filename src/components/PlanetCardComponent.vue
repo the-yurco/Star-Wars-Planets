@@ -1,5 +1,5 @@
 <template>
-	<div class="col-md-3 col-sm-6 mb-4">
+	<div class="col-xl-3 col-sm-6 mb-4">
 		<div class="card p-3 rounded" @click="handleClick">
 			<!--  <h2> and a <p> element to display the name and population of the planet  -->
 			<h3>{{ planet.name }}</h3>
