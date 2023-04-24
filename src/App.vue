@@ -48,8 +48,17 @@
 					</div>
 				</div>
 
+				<div v-else-if="regex" class="text-white">
+					<div
+						class="alert bg-danger text-black d-flex align-items-center"
+						role="alert"
+					>
+						<div>Invalid search term. Please use only letter and hyphens.</div>
+					</div>
+				</div>
+
 				<!--? A list of planet cards that are rendered for each planet found in the API  -->
-				<div v-else class="row">
+				<div v-else class="row card-container">
 					<PlanetCardComponent
 						v-for="planet in planets"
 						:key="planet.name"
@@ -87,26 +96,38 @@
 			const searchTerm = ref(''); // property that sores the user's search term
 			const planets = ref<PlanetInfo[]>([]); // property that soTres the list of planets fetched from API
 			const isLoading = ref(); // property that stores if the app is currently fetching data from API
+			const regex = ref();
 
 			const selectedPlanet = ref<PlanetInfo | null>(null); // stores the selected planet for displaying details
 
-			// this func will fetch the whole list of planets that match the searchTerm and it will update planets prop
-			const fetchPlanetsOnLoad = async () => {
-				isLoading.value = true;
-				planets.value = await fetchPlanets('');
-				isLoading.value = false;
-			};
-
-			// call fetchPlanetsOnLoad when the component is mounted:
-			onMounted(fetchPlanetsOnLoad);
+			// const fetchPlanetsOnLoad = async () => {
+			// 	const allPlanets = await fetchPlanets('');
+			// 	const randomStartIndex = Math.floor(
+			// 		Math.random() * (allPlanets.length - 1)
+			// 	);
+			// 	const randomPlanets = allPlanets.slice(
+			// 		randomStartIndex,
+			// 		randomStartIndex + 10
+			// 	);
+			// 	planets.value = randomPlanets;
+			// };
 
 			// An zsync function that is called when user types in the search input
 			// it fetches the list of planets that match the seaerxh term and updates the planets property
 			const handleSearchInput = async () => {
+				const regexValidation = /^[a-zA-Z\s-]*$/;
+				if (!regexValidation.test(searchTerm.value)) {
+					regex.value = true;
+					return;
+				}
 				isLoading.value = true;
 				planets.value = await fetchPlanets(searchTerm.value);
+				regex.value = false;
 				isLoading.value = false;
 			};
+
+			// call fetchPlanetsOnLoad when the component is mounted:
+			onMounted(handleSearchInput);
 
 			// this func. is called when the user closes the modal card
 			const handleCloseDetails = () => {
@@ -119,6 +140,7 @@
 			};
 
 			return {
+				regex,
 				searchTerm,
 				planets,
 				isLoading,
