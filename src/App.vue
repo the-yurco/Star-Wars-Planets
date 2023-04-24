@@ -41,19 +41,29 @@
 				<!--! v-else ==> it is a directive used to print msg when no planets were found -->
 				<div v-else-if="planets.length === 0" class="text-white">
 					<div
-						class="alert bg-danger text-black d-flex align-items-center w-25"
+						class="alert bg-danger text-black d-flex align-items-center flex-row gap-3"
 						role="alert"
 					>
-						<div>No Planets found</div>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+							<!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+							<path
+								d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"
+							/></svg
+						>No Planets found
 					</div>
 				</div>
 
 				<div v-else-if="regex" class="text-white">
 					<div
-						class="alert bg-danger text-black d-flex align-items-center"
+						class="alert bg-danger text-black d-flex align-items-center flex-row gap-3"
 						role="alert"
 					>
-						<div>Invalid search term. Please use only letter and hyphens.</div>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+							<!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+							<path
+								d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"
+							/></svg
+						>Invalid search term. Please use only letter and hyphens.
 					</div>
 				</div>
 
