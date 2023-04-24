@@ -129,7 +129,7 @@
 				console.log(fetchPlanets(''));
 
 				regex.value = false;
-				isLoading.value = false;
+				isLoading.value = true;
 			};
 
 			// call fetchPlanetsOnLoad when the component is mounted:
