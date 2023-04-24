@@ -10,18 +10,18 @@
 			</div>
 			<div>
 				<div class="row">
-					<p class="col">
+					<p class="col-xl-6 col-sm-12">
 						Climate: <span>{{ planet.climate }}</span>
 					</p>
-					<p class="col">
+					<p class="col-xl-6 col-sm-12">
 						Population: <span>{{ planet.population }}</span>
 					</p>
 				</div>
 				<div class="row">
-					<p class="col">
+					<p class="col-xl-6 col-sm-12">
 						Gravity: <span>{{ planet.gravity }}</span>
 					</p>
-					<p class="col">
+					<p class="col-xl-6 col-sm-12">
 						Surface water:
 						<span>
 							{{ planet.surface_water }}
@@ -29,7 +29,7 @@
 					</p>
 				</div>
 				<div class="row">
-					<p class="col">
+					<p class="col-xl-12 col-sm-12">
 						Terrain: <span>{{ planet.terrain }}</span>
 					</p>
 				</div>

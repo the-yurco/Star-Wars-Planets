@@ -85,9 +85,18 @@ body {
 		margin: 15% auto;
 		color: $main-color;
 		width: 80%;
+		min-width: 18rem;
 		max-width: 40%;
 		@include modal-card-box-shadow;
 		animation: modal-animation 0.2s ease-in 1;
+
+		h2 {
+			font-size: clamp(1.5rem, 2vw, 2rem) !important;
+		}
+
+		p {
+			font-size: clamp(0.9rem, 1vw, 1.5rem) !important;
+		}
 
 		span {
 			color: $secondary-color;

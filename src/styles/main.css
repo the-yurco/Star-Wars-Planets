@@ -92,9 +92,16 @@ body .modal-content {
   margin: 15% auto;
   color: #fff;
   width: 80%;
+  min-width: 18rem;
   max-width: 40%;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 7px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -10px, rgba(0, 0, 0, 0.322) 0px -7px 0px inset;
   animation: modal-animation 0.2s ease-in 1;
+}
+body .modal-content h2 {
+  font-size: clamp(1.5rem, 2vw, 2rem) !important;
+}
+body .modal-content p {
+  font-size: clamp(0.9rem, 1vw, 1.5rem) !important;
 }
 body .modal-content span {
   color: #a1cad7;
