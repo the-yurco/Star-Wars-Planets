@@ -52,6 +52,7 @@ body {
 		&:hover {
 			transform: translateY(-8px);
 			cursor: pointer;
+			border: 1px solid $border-color !important;
 			@include card-box-shadow-hover;
 		}
 
@@ -61,8 +62,10 @@ body {
 	}
 
 	.alert {
-		position: absolute;
-		top: 90% !important;
+		position: relative;
+		// top: 90% !important;
+		font-size: clamp(0.8rem, 1vw, 1rem);
+		animation: shake 0.5s linear;
 	}
 
 	.modal {
