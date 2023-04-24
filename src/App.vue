@@ -115,13 +115,19 @@
 			// An zsync function that is called when user types in the search input
 			// it fetches the list of planets that match the seaerxh term and updates the planets property
 			const handleSearchInput = async () => {
+				isLoading.value = true;
 				const regexValidation = /^[a-zA-Z\s-]*$/;
 				if (!regexValidation.test(searchTerm.value)) {
 					regex.value = true;
+					isLoading.value = false;
 					return;
 				}
-				isLoading.value = true;
-				planets.value = await fetchPlanets(searchTerm.value);
+				const filteredPlanets = await fetchPlanets('');
+				planets.value = filteredPlanets.filter((planet) =>
+					planet.name.toLowerCase().startsWith(searchTerm.value.toLowerCase())
+				);
+				console.log(fetchPlanets(''));
+
 				regex.value = false;
 				isLoading.value = false;
 			};
