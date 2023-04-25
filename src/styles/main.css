@@ -58,9 +58,6 @@ body #basic-addon1 {
   background-color: #a1cad7;
   border: 1px solid #111111 !important;
 }
-body #basic-addon1 img {
-  height: 2rem !important;
-}
 body .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
   border: none !important;
   outline: none !important;

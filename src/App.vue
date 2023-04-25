@@ -16,8 +16,8 @@
 						<img
 							src="./assets/colorized-icon-logo.png"
 							alt=""
-							width="35"
-							height="100"
+							width="32"
+							height="32"
 						/>
 					</span>
 				</div>
