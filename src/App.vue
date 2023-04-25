@@ -13,7 +13,12 @@
 						class="input-group-text rounded-0 rounded-start"
 						id="basic-addon1"
 					>
-						<img src="./assets/colorized-icon-logo.png" alt="" />
+						<img
+							src="./assets/colorized-icon-logo.png"
+							alt=""
+							width="35"
+							height="100"
+						/>
 					</span>
 				</div>
 				<input
