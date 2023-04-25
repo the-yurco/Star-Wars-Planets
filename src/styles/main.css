@@ -82,7 +82,7 @@ body .card:hover {
   border: 1px solid #111111 !important;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 15px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -10px, rgba(0, 0, 0, 0.322) 0px -5px 0px inset;
 }
-body .card h3 {
+body .card h2 {
   color: #a1cad7;
 }
 body .alert {

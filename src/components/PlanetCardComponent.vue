@@ -2,7 +2,7 @@
 	<div class="col-xl-3 col-sm-6 mb-4">
 		<div class="card p-3 rounded" @click="handleClick">
 			<!--  <h3> and a <p> element to display the name and population of the planet  -->
-			<h3>{{ planet.name }}</h3>
+			<h2>{{ planet.name }}</h2>
 			<p>
 				Population:
 				{{ planet.population }}
