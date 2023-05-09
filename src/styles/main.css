@@ -119,15 +119,20 @@ body .modal-content {
 }
 body .modal-content h2 {
   font-size: clamp(1.5rem, 2vw, 2rem) !important;
+  border: 1px solid #fff;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
 }
 body .modal-content p {
   font-size: clamp(0.9rem, 1vw, 1.5rem) !important;
+  line-height: 1.9rem;
 }
 body .modal-content span {
   color: #a1cad7;
   border: 1px solid #1d1e1f;
   padding: 0.3rem;
   border-radius: 0.3rem;
+  font-size: clamp(0.5rem, 1vw, 1rem) !important;
 }
 body .close {
   color: #a1cad7;

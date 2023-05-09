@@ -96,10 +96,14 @@ body {
 
 		h2 {
 			font-size: clamp(1.5rem, 2vw, 2rem) !important;
+			border: 1px solid $main-color;
+			padding: 0.3rem;
+			border-radius: 0.3rem;
 		}
 
 		p {
 			font-size: clamp(0.9rem, 1vw, 1.5rem) !important;
+			line-height: 1.9rem;
 		}
 
 		span {
@@ -107,6 +111,7 @@ body {
 			border: 1px solid $dark-color;
 			padding: 0.3rem;
 			border-radius: 0.3rem;
+			font-size: clamp(0.5rem, 1vw, 1rem) !important;
 		}
 	}
 

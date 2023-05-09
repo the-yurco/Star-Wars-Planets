@@ -7,7 +7,7 @@
 
 			<!--? A text input element that allows users to search for planets -->
 			<!--! v-model ==> it is directive used to bind the searchTerm to the value of the search input ele. -->
-			<div class="input-group mb-3">
+			<div class="input-group mb-1">
 				<div class="input-group-prepen">
 					<span
 						class="input-group-text rounded-0 rounded-start"
